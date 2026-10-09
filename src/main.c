@@ -12,7 +12,7 @@ int main(void){
 	buffer[len - 1] = '\0';
   }
   if(strcmp(buffer, "exit")==0) break;
-  printf("you type %s", buffer);
+  printf("you type %s\n", buffer);
   }
   return 0;
   
