@@ -5,9 +5,13 @@
 int main(void){
   char buffer[101];
   while(1){
-  printf("S:");
+  printf("$:");
   fgets(buffer, sizeof(buffer), stdin);
-  if(strcmp(buffer, "exit\n")==0) break;
+  size_t len = strlen(buffer);
+  if(len > 0 && buffer[len - 1] == '\n'){
+	buffer[len - 1] = '\0';
+  }
+  if(strcmp(buffer, "exit")==0) break;
   printf("you type %s", buffer);
   }
   return 0;
