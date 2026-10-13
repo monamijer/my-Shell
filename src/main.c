@@ -12,7 +12,16 @@ int main(void){
 	buffer[len - 1] = '\0';
   }
   if(strcmp(buffer, "exit")==0) break;
-  printf("you type %s\n", buffer);
+  size_t i = 0;
+  int spaces = 0;
+  while (buffer[i] != '\0'){
+	if(buffer[i]== ' '){
+	  spaces++;
+	}
+	printf("%c", buffer[i]);
+	i++;
+  }
+  printf("\nNumber of spaces: %d\n", spaces);
   }
   return 0;
   
