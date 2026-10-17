@@ -14,14 +14,18 @@ int main(void){
   if(strcmp(buffer, "exit")==0) break;
   size_t i = 0;
   int spaces = 0;
+  int words = 0;
   while (buffer[i] != '\0'){
 	if(buffer[i]== ' '){
 	  spaces++;
+	}else if((i ==0 || buffer[i - 1] == ' ') && buffer[i] != ' '){
+	  words++;
 	}
 	printf("%c", buffer[i]);
 	i++;
   }
   printf("\nNumber of spaces: %d\n", spaces);
+  printf("Number of words: %d\n", words);
   }
   return 0;
   
